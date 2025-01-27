@@ -5,17 +5,17 @@ name: "Build package"
 
 on:
   push:
-    branches: ["master", "main"]
+    branches: [ "master", "main" ]
   pull_request:
-    branches: ["master", "main"]
+    branches: [ "master", "main" ]
 
 jobs:
   build:
     runs-on: "${{ matrix.os }}"
     strategy:
       matrix:
-        os: ["macos-latest", "ubuntu-latest", "windows-latest"]
-        python-version: ["3.9", "3.10", "3.11", "3.12"]
+        os: [ "macos-latest", "ubuntu-latest", "windows-latest" ]
+        python-version: [ "3.9", "3.10", "3.11", "3.12", "3.13" ]
       fail-fast: false
     steps:
       - name: "⤵️ Check out code from GitHub"
